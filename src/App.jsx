@@ -11,6 +11,7 @@ import "./assets/style.css";
         formula:["0","+"],       //計算式、最初にイコールを入力された時のエラー対策
         disabled:true,           //クリック可能の有無
         input:[],                //現在出力されている値
+        isLoding: true
       };
       this.handleClick = this.handleClick.bind(this)
     }
@@ -68,9 +69,23 @@ import "./assets/style.css";
       })
     }
 
+    componentDidMount(){
+      this.setState({
+        isLoding: false
+      })
+    }
+
     render() {
       return (
+        this.state.isLoading ?
+        <div className="load">
+          <div className="load-text">
+            Now Loding
+          </div>
+        </div>
+        :
         <>
+          
         <div className="title">
           <div className="title-field">
             Calculator
