@@ -1,0 +1,118 @@
+@media screen and (max-width: 640px) {
+  body{
+    height: 100vh;
+    width: 100vw;
+    background: #EEF0F4;
+    position: relative;
+  }
+  .body-content{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 500px;
+    width: 280px;
+  }
+  /* title */
+  .title{
+    height: 50px;
+    width: 200px;
+    margin: 30px auto;
+    border-radius: 10px;
+    background: #EEF0F4;
+    box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  }
+  .title-field{
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Rajdhani', sans-serif;
+    color: dimgray;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  /* calculator-body */
+  .content{
+    height: 400px;
+    width: 280px;
+    margin: auto;
+    background: #EEF0F4;
+    border-radius: 10px;
+    box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;
+  }
+  /* input */
+  .result{
+    height: 40px;
+    width: 250px;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+  }
+  .result-field{
+    height: 40px;
+    width: 240px;
+    background: #EEF0F4;
+    box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+    border-radius: 10px;
+    text-align: right;
+    line-height: 40px;
+    color: dimgray;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .btn-content{
+    position: relative;
+    top: 40px;
+    height: 330px;
+    width: 240px;
+    margin: auto;
+  }
+  .btn-group{
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn{
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    background: #EEF0F4;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #D9DADE, -5px -5px 5px #FFFFFF;
+    border: 0;
+    outline: none;
+    color: dimgray;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+    transition: all .3s;
+    cursor: pointer;
+  }
+  .btn:hover{
+    color: #000;
+  }
+  .btn:focus{
+    background: #EEF0F4;
+    box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  }
+  /* disabled */
+  .btn:disabled {
+    color: dimgray;
+  }
+  /* AC */
+  .ac{
+    width: 106px;
+  }
+  .string{
+    font-size: 25px;
+  }
+  /* space */
+  .space{
+    box-shadow: 0px 0px 0px;
+    pointer-events: none;
+  }
+}

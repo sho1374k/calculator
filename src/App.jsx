@@ -2,6 +2,7 @@ import React from "react";
 import {ActionButton} from "./components/action-btn";
 import "./assets/reset.css";
 import "./assets/style.css";
+import "./assets/mobile.css";
 
   class App extends React.Component {
     constructor(props) {
@@ -70,158 +71,157 @@ import "./assets/style.css";
 
     render() {
       return (
-        <>
-        <div className="title">
-          <div className="title-field">
-            Calculator
+        <div className="body-content">
+          <div className="title">
+            <div className="title-field">
+              Calculator
+            </div>
           </div>
+          <div className="content">
+            <div className="result">
+              <div className="result-field">
+                {this.state.input}
+              </div>
+            </div>
+            <div className="btn-content">
+
+              <div className="btn-group">
+                <button  className="btn ac"  
+                  onClick={() => this.handleReset("AC")}
+                >
+                  {"AC"}
+                </button>
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"%"} 
+                  btnValue={"%"}
+                  style={"btn string"} 
+                  disabled={this.state.disabled}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"*"} 
+                  btnValue={"x"}
+                  style={"btn string"} 
+                  disabled={this.state.disabled}
+                />
+              </div>
+
+              <div className="btn-group">
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"7"} 
+                  btnValue={"7"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"8"} 
+                  btnValue={"8"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"9"} 
+                  btnValue={"9"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"/"} 
+                  btnValue={"÷"}
+                  style={"btn string"} 
+                  disabled={this.state.disabled}
+                />
+              </div>
+
+              <div className="btn-group">
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"4"} 
+                  btnValue={"4"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"5"} 
+                  btnValue={"5"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"6"} 
+                  btnValue={"6"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"-"}
+                  btnValue={"-"}
+                  style={"btn string"} 
+                  disabled={this.state.disabled}
+                />
+              </div>
+
+              <div className="btn-group">
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"1"} 
+                  btnValue={"1"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"2"} 
+                  btnValue={"2"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"3"} 
+                  btnValue={"3"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"+"} 
+                  btnValue={"+"}
+                  style={"btn string"} 
+                  disabled={this.state.disabled}
+                />
+              </div>
+              <div className="btn-group">
+                <ActionButton 
+                  handleClick={this.handleClick}
+                  value={"0"} 
+                  btnValue={"0"}
+                  style={"btn number"} 
+                  disabled={false}
+                />
+                <button className="btn space" disabled={true}></button>
+                <button className="btn space" disabled={true}></button>
+                <button  className="btn string"  
+                  onClick={() => this.handleClick("=")}
+                  disabled={this.state.disabled}
+                >{"="}
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* <div className="other-content">
+            <div className="status">合計 {this.state.result}</div>
+            <div className="formula">計算式 {this.state.formula}</div>
+          </div> */}
         </div>
-        <div className="content">
-          <div className="result">
-            <div className="result-field">
-              {this.state.input}
-            </div>
-          </div>
-          <div className="btn-content">
-
-            <div className="btn-group">
-              <button  className="btn ac"  
-                onClick={() => this.handleReset("AC")}
-              >
-                {"AC"}
-              </button>
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"%"} 
-                btnValue={"%"}
-                style={"btn string"} 
-                disabled={this.state.disabled}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"*"} 
-                btnValue={"x"}
-                style={"btn string"} 
-                disabled={this.state.disabled}
-              />
-            </div>
-
-            <div className="btn-group">
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"7"} 
-                btnValue={"7"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"8"} 
-                btnValue={"8"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"9"} 
-                btnValue={"9"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"/"} 
-                btnValue={"÷"}
-                style={"btn string"} 
-                disabled={this.state.disabled}
-              />
-            </div>
-
-            <div className="btn-group">
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"4"} 
-                btnValue={"4"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"5"} 
-                btnValue={"5"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"6"} 
-                btnValue={"6"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"-"}
-                btnValue={"-"}
-                style={"btn string"} 
-                disabled={this.state.disabled}
-              />
-            </div>
-
-            <div className="btn-group">
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"1"} 
-                btnValue={"1"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"2"} 
-                btnValue={"2"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"3"} 
-                btnValue={"3"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"+"} 
-                btnValue={"+"}
-                style={"btn string"} 
-                disabled={this.state.disabled}
-              />
-            </div>
-            <div className="btn-group">
-              <ActionButton 
-                handleClick={this.handleClick}
-                value={"0"} 
-                btnValue={"0"}
-                style={"btn number"} 
-                disabled={false}
-              />
-              <button className="btn space" disabled={true}></button>
-              <button className="btn space" disabled={true}></button>
-              <button  className="btn string"  
-                onClick={() => this.handleClick("=")}
-                disabled={this.state.disabled}
-              >{"="}
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* <div className="other-content">
-          <div className="status">合計 {this.state.result}</div>
-          <div className="formula">計算式 {this.state.formula}</div>
-        </div> */}
-        
-        </>
       );
     }
   }
